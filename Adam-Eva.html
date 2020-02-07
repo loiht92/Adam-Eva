@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Apple = function () {
+        this.weight = 10;//chi den doi tuong qua tao//
+        this.decrease = function () { // trong luong tao giam//
+            if(this.weight > 0){ // neu khoi luong qua tao lon hon 0 thi khi bi an, khoi luong qua tao se giam di 1 don vi//
+                this.weight--;
+            }
+        };
+
+        this.getWeight = function () { // lay ra khoi luong qua tao//
+            return this.weight
+        };
+    };
+
+    let Human = function () {
+        this.name = "";
+        this.gender = true;
+        this.weight = 0;
+
+        this.isMale = function () {// lay ra khoi luong cua nguoi//
+            return this.gender;
+        };
+        this.setGender = function (gender) { //Thay doi gioi tinh cua nguoi, truyen vao tham so la gioi tinh//
+            this.gender = gender;
+        };
+        this.checkApple = function (apple) { //kiem tra tao//
+            return apple.weight > 0;// neu khoi luong tao >0 //
+        };
+        this.eat = function (apple) {// an tao//
+            if(this.checkApple(apple)){
+                this.weight++;
+                apple.decrease();// khi an khoi luong nguoi tang len va khoi luong tao giam di//
+            }
+
+        };
+        this.say = function (say) {
+            console.log(say);
+        };
+        this.getName = function () {
+            return this.name
+        };
+        this.setName = function (name) {
+            return  this.name = name;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setWeight = function (weight) {
+            return  this.weight = weight;
+        };
+
+    };
+
+    let apple = new Apple();
+
+    let adam = new Human();
+
+    let eva = new Human();
+
+
+
+</script>
+</body>
+</html>
